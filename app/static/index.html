@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>ScamShield AI — Check before you act</title>
+  <meta name="description" content="Evidence-backed check for suspicious texts, emails, invoices, and URLs. Zero trust. Links are never opened." />
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">S</div>
+      <div>
+        <h1>ScamShield AI</h1>
+        <p>Check before you click, pay, or reply</p>
+      </div>
+    </div>
+    <div class="chip">ZERO TRUST</div>
+  </header>
+  <section class="hero">
+    <h2>Is this <em>legitimate</em>?</h2>
+    <p>Paste a text, email, invoice, wallet address, or URL. Indicators are extracted and checked against evidence. The link is never opened for you.</p>
+  </section>
+  <section class="card">
+    <label class="field" for="input">Suspicious content</label>
+    <textarea id="input" maxlength="20000" placeholder="Paste the message, email, invoice text, or URL."></textarea>
+    <div class="row">
+      <button class="primary" id="checkBtn" type="button">Check something</button>
+      <label class="filebtn">Upload file<input id="file" type="file" accept="image/*,.pdf,text/plain,.eml,.txt" hidden /></label>
+      <button class="ghost" id="clearBtn" type="button">Clear</button>
+      <span class="hint" id="status"></span>
+    </div>
+    <p class="error" id="error" hidden></p>
+    <div class="samples">
+      <button type="button" data-sample="bank">Sample: bank lock text</button>
+      <button type="button" data-sample="invoice">Sample: supplier invoice redirect</button>
+      <button type="button" data-sample="crypto">Sample: wallet support DM</button>
+    </div>
+  </section>
+  <section id="result"></section>
+  <section class="hist card">
+    <label class="field">Recent checks on this device</label>
+    <div id="history">No checks yet.</div>
+  </section>
+  <div class="priv">
+    <div>Raw message bodies are not stored on the server. Only a hash, verdict, and evidence codes are audited.</div>
+    <div>ScamShield cannot click links, send money, reply, or change accounts.</div>
+    <div>Verdicts: LOW · CAUTION · HIGH · UNKNOWN. Unknown beats fake certainty.</div>
+    <div>Household token stays in this browser and is hashed before audit write.</div>
+  </div>
+  <footer>ScamShield AI · not legal, financial, or law-enforcement advice.</footer>
+  <script src="/static/app.js"></script>
+</body>
+</html>
